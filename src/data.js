@@ -19,6 +19,7 @@ export const projects = [
   {
     id: '01',
     slug: 'resume-analyzer',
+    link: 'https://resume.aishwarya-singh.com/',
     title: 'AI Resume Analyzer',
     subtitle: 'Career recommendation platform',
     context: 'Personal project',
