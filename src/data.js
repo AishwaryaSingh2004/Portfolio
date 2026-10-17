@@ -20,6 +20,7 @@ export const projects = [
     id: '01',
     slug: 'resume-analyzer',
     link: 'https://ai-resume-analyzer-steel-psi.vercel.app/',
+    demo: { video: '/walkthroughs/resume-analyzer.mp4', poster: '/walkthroughs/resume-analyzer.jpg' },
     title: 'AI Resume Analyzer',
     subtitle: 'Career recommendation platform',
     context: 'Personal project',
