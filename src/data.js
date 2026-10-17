@@ -19,7 +19,7 @@ export const projects = [
   {
     id: '01',
     slug: 'resume-analyzer',
-    link: 'https://resume.aishwarya-singh.com/',
+    link: 'https://ai-resume-analyzer-steel-psi.vercel.app/',
     title: 'AI Resume Analyzer',
     subtitle: 'Career recommendation platform',
     context: 'Personal project',
