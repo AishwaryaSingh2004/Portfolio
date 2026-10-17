@@ -37,6 +37,7 @@ export const projects = [
     id: '02',
     slug: 'account-intelligence',
     link: 'https://vtklvr7lj4dcowgyeqffap.streamlit.app/',
+    demo: { video: '/walkthroughs/account-intelligence.mp4', poster: '/walkthroughs/account-intelligence.jpg' },
     title: 'AI Account Intelligence System',
     subtitle: 'Multi-agent sales enrichment',
     context: 'Personal project',

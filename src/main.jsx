@@ -347,6 +347,25 @@ function Home({ go }) {
   );
 }
 
+// A muted, looping screen recording that only plays while it is on screen.
+function Walkthrough({ demo, title }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const v = ref.current;
+    if (!v || reduced) return;
+    const io = new IntersectionObserver(([e]) => (e.isIntersecting ? v.play().catch(() => {}) : v.pause()), { threshold: 0.35 });
+    io.observe(v);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <figure className="case-demo">
+      <div className="case-demo-bar" aria-hidden="true"><i /><i /><i /></div>
+      <video ref={ref} src={demo.video} poster={demo.poster} muted loop playsInline preload="metadata"
+        controls={reduced} aria-label={`Walkthrough of ${title}`} />
+    </figure>
+  );
+}
+
 function Projects({ go }) {
   useReveal('projects');
   return (
@@ -359,8 +378,9 @@ function Projects({ go }) {
       </section>
       {projects.map((p, i) => (
         <section key={p.id} className={'case wrap reveal' + (i % 2 ? ' flip' : '')} id={p.slug}>
-          <div className="case-visual">
+          <div className={'case-visual' + (p.demo ? ' has-demo' : '')}>
             <span className="case-num">{p.id}</span>
+            {p.demo && <Walkthrough demo={p.demo} title={p.title} />}
             <div className="case-stack">{p.stack.map(t => <span key={t}>{t}</span>)}</div>
           </div>
           <div className="case-body">
